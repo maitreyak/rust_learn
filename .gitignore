@@ -1,8 +1,11 @@
 # Track only markdown files in this repo.
-# Ignore everything by default...
-*
+# Ignore everything by default, then re-allow:
+#   - the root .gitignore
+#   - any directory (so git descends to find .md files inside)
+#   - any .md file at any depth
+# Note: gitignore does not support inline comments, so each rule is on its own line.
 
-# ...then re-allow:
-!/.gitignore    # only the root .gitignore (not nested ones like .idea/.gitignore)
-!*/             # descend into directories so .md files inside are found
-!*.md           # any markdown file at any depth
+*
+!/.gitignore
+!*/
+!*.md
